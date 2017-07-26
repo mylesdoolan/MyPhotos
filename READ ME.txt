@@ -1,0 +1,10 @@
+Built to Android 25 because Roboelectric does not support API 26 yet
+
+I would usually write more tests, covering all aspects of my code. But given this is just a sample coding app I only wrote a few sample tests. Future work would be to add 100% coverage.
+
+Known issues:
+There is an issue with the network async task for getting the thumbnails.
+If you go back and forth out of albums viewing multiple thumbnail lists in quick succession, it will continue loading them in order of how the user viewed them.
+Future work would be to fix this, cancelling and removing the async tasks when the activity ends.
+The code does not load the thumbnails efficiently, it has to load them all before it shows them. Causes a poor user experience if the user rotates the device whilst they are still loading. Would like to improve this, using cache's.
+There are no checks in the network classes for the status code to make sure the request was successful. This should be added.
